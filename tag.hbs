@@ -1,0 +1,29 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{#tag}}
+<div class="site-header-content{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
+    <div class="outer">
+        <h1 class="article-title"><span>{{meta_title}}</span></h1>
+        <section class="excerpt">
+            A collection of {{plural ../pagination.total empty='zero posts' singular='% post' plural='% posts'}}
+        </section>
+    </div>
+    <div class="curve-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.089 486.452 1919.969 120"><path d="M1921 607H1v-61s401 43 960 43 960-43 960-43v61z" class="convex"></path></svg></div>
+</div>
+{{/tag}}
+
+<main id="site-main" class="site-main outer">
+    <section class="gh-content gh-canvas">
+        {{#tag}}<blockquote>{{description}}</blockquote>{{/tag}}
+    </section>
+    <div class="inner posts">
+        <div class="post-feed">
+            {{#foreach posts}}
+                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+                {{> "post-card"}}
+            {{/foreach}}
+
+        </div>
+    </div>
+</main>

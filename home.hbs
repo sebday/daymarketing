@@ -1,0 +1,119 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<div class="section" id="home">
+    {{#match @custom.publication_cover_style "!=" "None"}}
+        <div class="site-header-content{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
+            {{#if @site.cover_image}}
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+                <img class="site-header-cover"
+                    srcset="{{img_url @site.cover_image size="s"}} 300w,
+                            {{img_url @site.cover_image size="m"}} 600w,
+                            {{img_url @site.cover_image size="l"}} 1000w,
+                            {{img_url @site.cover_image size="xl"}} 2000w"
+                    sizes="100vw"
+                    src="{{img_url @site.cover_image size="xl"}}"
+                    alt=""
+                />
+            {{/if}}
+            <div class="outer">
+                <h2>Hi, I'm Sebastien Day</h2>
+                <h1>eCommerce & PPC Consultant</h1>
+                <section class="excerpt">I spent 16 years as CTO at SGS, helping to grow to a £31 million turnover leading <a href="/about">e-commerce retailer</a> - I can grow your business too.</section>
+                <div class="button cta-button">
+                    <a href="/contact/" class="post-button">book a free audit {{> "icons/comment-dots"}}</a>
+                </div>
+            </div>
+            <div class="scroll-icon-wrapper">
+                <div class="scroll-icon"></div>
+            </div>
+        </div>
+    {{/match}}
+</div>
+
+<div class="section" id="services">
+   
+    <div class="inner posts">
+        <div class="section-header"><h2>Digital Marketing Services</h2></div>
+        <div class="post-feed">
+            {{#get "posts" include="tags,authors" filter="tags:[hash-agency]" limit="all" }}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}           
+            
+        </div>
+    </div> 
+
+</div>
+
+<div class="section dark" id="about">
+      
+    <section class="gh-content gh-canvas">
+    
+        <h2>About Me</h2>
+        <h3>Geek since 1992</h3>
+        <figure class="kg-image-card"><img src="https://day.marketing/content/images/2022/06/seb.webp" class="kg-image" alt="" loading="lazy" width="500" height="500"></figure>
+        
+        <div class="content">      
+            <section id="about">
+                <div class="icon-header"><i class="fa-solid fa-clipboard-check"></i><h3>A Brief Intro</h3></div>
+                <p>I worked as CTO at SGS Engineering for 16 years helping them grow to £31 million turnover in 2021.</p>
+                <ul class="square-icons three-wide">
+                    <li><i class="fa-solid fa-up-long"></i><p><span class="big">x 9</span><span class="small">ROAS</span></p></li>
+                    <li class="purple"><i class="fa-solid fa-up-long"></i><p><span class="big">£31m</span><span class="small">last year</span></p></li>
+                    <li class="green"><i class="fa-solid fa-up-long"></i><p><span class="big">&frac12; s</span><span class="small">load</span></p></li>
+                </ul>
+                <p>In June 2022 I founded my own consulting company to help other ecommerce businesses grow.</p>
+                <p>My lifelong passion for computing coupled with the experience of being on the frontline, building an ecommerce business, has given me a great depth of knowledge. 
+                    I have the experience to help not only with your Google Ads account but with all aspects of ecommerce.</p>
+
+                <ul id="achievements" class="cert-links">
+                    <li>
+                        <a target="blank" href="https://traktion.ai/p/m/sebastian-day">
+                            <figure class="kg-image-card"><img src="/content/images/posts/traktion.webp" class="kg-image" alt="Traktion logo" loading="lazy" width="75" height="75"></figure>
+                            <h4>Traktion Certified Professional</h4>
+                            <span>Issued Jul 2022</span>
+                            <button>Show credential <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="blank" href="https://skillshop.exceedlms.com/student/award/UwodewvNt76zEu1SMEEbxd3N">
+                            <figure class="kg-image-card"><img src="/content/images/posts/googleadslogo.webp" class="kg-image" alt="Google Ads logo" loading="lazy" width="75" height="75"></figure>
+                            <h4>Shopping Ads Certification </h4>
+                            <span>Issued Jul 2022 · Expires Jul 2023</span>
+                            <button>Show credential <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="small">
+                    <li>Deep technical understanding in many subjects</li>
+                    <li>Managed a large AdWords account from 2006</li>
+                    <li>Built multiple Magento e-commerce stores</li>
+                    <li>Built automated email marketing</li>
+                    <li>Ran on-prem and cloud servers</li>
+                    <li>Procured Milwaukee power tools</li>
+                    <li>Implemented ERP &amp; WHM systems</li>
+                    <li>Built company wide realtime dashboard</li>
+                    <li>Raised a small dog that only bites the odd ankle</li>
+                </ul>
+            </section>
+            <section id="agency" class="red">
+                <div class="icon-header"><i class="fa-solid fa-house-fire"></i><h3>Not An Agency</h3></div>
+                <p>Having worked with the biggest agencies in the country over the last 15 years I know their strengths and weaknesses. They make the sale with a Director or CEO, meetings are then with your account manager 
+                    but when it comes to actual work on the account it is done by the most junior team member.</p>
+                <p>When I work on your ads account I apply 16 years of hard-earned experience and knowledge to grow your business at every step from onboarding to reporting.</p>
+            </section>
+        </div>
+
+
+</section>           
+    
+</div>
+
+
+
+
+

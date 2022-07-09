@@ -1,0 +1,54 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+    <div class="site-header-content">
+        <div class="outer">
+            <h1>Hi, I'm Seb Day<br /><span>Google PPC Consultant</span></h1>
+            <div class="button cta-button">
+                <a href="/google-ads-management/" class="post-button">looking for google ads management? <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <h2>Or read about tech stuff below</h2>
+        </div>
+        <div class="curve-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.089 486.452 1919.969 120"><path d="M1921 607H1v-61s401 43 960 43 960-43 960-43v61z" class="convex"></path></svg></div>
+    </div>
+
+
+
+{{!-- The main content area --}}
+<main id="site-main" class="site-main outer">
+
+    <div class="inner tagcloud">
+        {{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
+            <div class="tags">
+                <ul>
+                    {{#foreach tags}}
+                    <li data-size="{{count.posts}}">
+                        <a href="{{url}}">{{name}}  <span>{{count.posts}} </span></a>
+                    </li>                          
+                    {{/foreach}}
+                </ul>
+            </div>
+        {{/get}}
+    </div>
+
+    <div class="inner posts">
+        <div class="post-feed">
+            {{#get "posts" include="tags,authors" filter="tags:-[hash-agency]" limit="all" }}
+                {{#foreach posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/get}}           
+            
+        </div>
+    </div> 
+
+<section class="gh-content gh-canvas">
+    <blockquote>I love anything tech and have spent my whole life "hacking" in the real sense of the world - tinkering with things (normally in a shed).</blockquote>
+    <p class="first">When I got my first Amiga aged 9 it started my lifelong passion for computing. I spent hours playing around in Workbench, changing colours, icons and wallpapers. I started with simple Basic scripts, but before long I was writing my own games and demos. My passion for computing had been ignited, and it has continued to this day. Over 30 years later I still enjoy configuring computers and making them work for me!</p>
+    <blockquote>Humanity Is a Kind of 'Biological Boot Loader' for AI - Elon Musk, TechnoKing</blockquote>
+    <blockquote></blockquote>
+</section>
+
+</main>
