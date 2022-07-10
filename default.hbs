@@ -21,7 +21,6 @@
     <!-- load all Font Awesome styles -->
     <link rel="preload" href="{{asset "fontawesome/css/all.css"}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{asset "fontawesome/css/all.css"}}"></noscript>
-    <link rel="stylesheet" type="text/css" href="{{asset "fullpage/fullpage.min.css" }}"/>
 </head>
 <body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}">
 <!-- Google Tag Manager (noscript) -->
@@ -33,7 +32,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="gh-head-inner inner gh-container">
         <div class="gh-head-menu">
             <ul class="nav">
-                <li class="nav-google-ads"><a href="/google-ads-management/">Google Ads</a></li>
+                <li class="nav-google-ads"><a href="/ecommerce-ppc-consultant/">PPC</a></li>
+                <li class="nav-google-ads"><a href="/google-shopping-feed-optimisation/">Shopping</a></li>
                 <li class="nav-email"><a href="/ecommerce-growth-consultant/">Ecommerce</a></li>
                 <li class="nav-cro"><a href="/conversion-rate-optimisation/">CRO</a></li>
                 <li class="nav-email"><a href="/email-marketing/">Email</a></li>
@@ -54,23 +54,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 <li class="nav-about"><a href="/about/">About</a></li>
                 <li class="nav-contact"><a href="/contact/">Contact</a></li>
-                <li class="nav-contact"><a href="/book/">Book</a></li>
+                <li class="nav-contact"><a href="/book/">Free Site Audit</a></li>
                 <li class="nav-linkedin"><a href="https://www.linkedin.com/in/sebastien-day/" title="Linkedin Profile" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
             </ul>
         </div>
     </nav>
 </header>
 
-    
-<div id="fullpage">
-	
-    {{{body}}}
-    
-    <section class="section fp-auto-height-responsive blue" id="contact-form">
 
+{{{body}}}
+    
+<section class="section blue" id="contact-form">
+    <div class="outer">
         <div class="gh-canvas">
             <div class="kg-card contact-intro">
-                <figure><img src="/content/images/staff/seb.webp" alt="Sebastien Day" width="500" height="500"></figure>
+                <figure><img src="/content/images/posts/scientist.webp" alt="ecommerce conversion science" width="500" height="500"></figure>
                 <section class="content">
                     <h2>Supercharged eCommerce</h2>
                     <p>See how I can help grow your ecommerce business - I will audit your website, PPC and marketing and provide a free report with actionable insights. <br /> <a href="/book/"><i class="fa-solid fa-calendar-days"></i> Prefer to book a meeting?</a> </p>
@@ -133,65 +131,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="section dark fp-auto-height-responsive" id="footer">
-        <footer class="site-footer">
-            <div class="outer">
-                <div class="inner">
-                    <a class="gh-head-logo" href="{{@site.url}}">
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    </a>
-                    <address>
-                        <ul>
-                            <li>{{> "icons/phone-volume"}}07518 268 156</li>
-                            <li>{{> "icons/at"}}<a href="mailto:seb@day.marketing" target="_blank">seb@day.marketing</a></li>
-                            <li class="flexy">{{> "icons/map-location"}}<p>Day Marketing<br /><span>Derwent Business Centre,<br />Derby, DE1 2BU</span></p></li>
-                        </ul>
-                    </address>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sebastien-day/" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/" title="Facebook Profile"><i class="fa-brands fa-facebook"></i></a> 
-                        <a href="https://www.instagram.com/" title="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.twitter.com/" title="Twitter Profile"><i class="fa-brands fa-twitter"></i></a>
-                    </div>
+<section class="section dark" id="footer">
+    <footer class="site-footer">
+        <div class="outer">
+            <div class="inner">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                </a>
+                <address>
+                    <ul>
+                        <li>{{> "icons/phone-volume"}}07518 268 156</li>
+                        <li>{{> "icons/at"}}<a href="mailto:seb@day.marketing" target="_blank">seb@day.marketing</a></li>
+                        <li class="flexy">{{> "icons/map-location"}}<p>Day Marketing<br /><span>Derwent Business Centre,<br />Derby, DE1 2BU</span></p></li>
+                    </ul>
+                </address>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/sebastien-day/" title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/" title="Facebook Profile"><i class="fa-brands fa-facebook"></i></a> 
+                    <a href="https://www.instagram.com/" title="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/" title="Twitter Profile"><i class="fa-brands fa-twitter"></i></a>
                 </div>
-                <div class="inner links">
-                    <div class="tech-stack">
-                        <h2>I ❤️ cutting edge tech</h2> 
-                        <ul>
-                            <li>{{> "icons/google-ads"}}ads</li>
-                            <li>{{> "icons/google-analytics"}}analytics</li>
-                            <li>{{> "icons/google-data-studio"}}data</li>
-                            <li>{{> "icons/google-optimize"}}optimise</li>
-                            <li>{{> "icons/magento"}}magento</li>
-                            <li>{{> "icons/ghost"}}ghost</li>
-                            <li>{{> "icons/klaviyo"}}klaviyo</li>
-                            <li>{{> "icons/gorgias"}}gorgias</li>
-                            <li>{{> "icons/php"}}php8</li>
-                            <li>{{> "icons/javascript"}}javascript</li>
-                            <li>{{> "icons/html"}}html5</li>
-                            <li>{{> "icons/css"}}css3</li>
-                        </ul>
-                    </div>
-                </div>
-                <nav class="site-footer-nav">
-                    {{navigation type="secondary"}}
-                </nav>
-                <section class="copyright">&copy; {{date format="YYYY"}} Day Marketing is a trading name of Day Digital Marketing Ltd. Company No: 14182222.</section>
-                <section class="built-by">Built by seb with <i class="fa-solid fa-heart"></i> and powered by <a href="https://github.com/sebday/day.marketing-casper" rel="noopener noreferrer nofollow" target="_blank">Ghost.</a>
             </div>
-        </footer>
-    </section>
-
-</div>
-
-
+            <div class="inner links">
+                <div class="tech-stack">
+                    <h2>I ❤️ cutting edge tech</h2> 
+                    <ul>
+                        <li>{{> "icons/google-ads"}}ads</li>
+                        <li>{{> "icons/google-analytics"}}analytics</li>
+                        <li>{{> "icons/google-data-studio"}}data</li>
+                        <li>{{> "icons/google-optimize"}}optimise</li>
+                        <li>{{> "icons/magento"}}magento</li>
+                        <li>{{> "icons/ghost"}}ghost</li>
+                        <li>{{> "icons/klaviyo"}}klaviyo</li>
+                        <li>{{> "icons/gorgias"}}gorgias</li>
+                        <li>{{> "icons/php"}}php8</li>
+                        <li>{{> "icons/javascript"}}javascript</li>
+                        <li>{{> "icons/html"}}html5</li>
+                        <li>{{> "icons/css"}}css3</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="site-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            <section class="copyright">&copy; {{date format="YYYY"}} Day Marketing is a trading name of Day Digital Marketing Ltd. Company No: 14182222.</section>
+            <section class="built-by">Built by seb with <i class="fa-solid fa-heart"></i> and powered by <a href="https://github.com/sebday/day.marketing-casper" rel="noopener noreferrer nofollow" target="_blank">Ghost.</a>
+        </div>
+    </footer>
+</section>
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{asset "built/casper.js"}}"></script>
-<script type="text/javascript" src="{{asset "fullpage/fullpage.min.js"}}"></script>
 <script>
     $(document).ready(function () {
         // Mobile Menu Trigger
@@ -264,14 +258,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End of Woopra Code -->
     
 {{/match}}
-
-<script type="text/javascript">
-    var myFullpage = new fullpage('#fullpage', {
-        licenseKey: '8K5UI-4OV37-G0HJ8-Y6MQK-BLKDN',
-        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
-        responsiveWidth: 500
-    });
-</script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}

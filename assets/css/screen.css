@@ -162,7 +162,7 @@ production stylesheet in assets/built/screen.css
 /* Full width page blocks */
 .outer {
     position: relative;
-    padding: 0 4vmin;
+    padding: 4vmin 0;
 }
 
 /* Centered content container blocks */
@@ -222,8 +222,7 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-header-content .outer {
-    z-index: 10;
-    margin: 0 auto;
+    padding-top: 10vh;
 }
 
 .site-header-content h1 {
@@ -235,15 +234,12 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-header-content h2 {
-    font-size: 1.8em;
-    font-weight: 300;
     margin: 0;
 }
 
 .site-header-content h1 span {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--color-yellow);
+    font-size: 0.8em;
+    color: white;
 }
 
 .site-header-content .excerpt {
@@ -573,17 +569,21 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .gh-burger {
         display: inline-block;
     }
+
     #gh-head {
         width: 100%;
         padding: 1em;
         transition: all 0.2s ease-in-out ;
     }
-    #gh-head.nav-up {
-        top:-75px;
+    
+    .gh-head-open #gh-head {
+        background: var(--color-darkmode);
     }
+
     #gh-head .gh-head-inner {
         grid-template-columns: 1fr;
     }
+
     #gh-head .gh-head-brand {
         position: relative;
         z-index: 10;
@@ -594,6 +594,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         justify-content: space-between;
         user-select: none;
     }
+
     #gh-head .gh-head-menu {
         align-self: center;
         display: flex;
@@ -604,34 +605,42 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         font-size: 3.6rem;
         line-height: 1.1em;
     }
+
     #gh-head .gh-head-menu .nav li {
         border-bottom: 1px solid var(--color-darkmode);
         width: 100%;
     }
+
     #gh-head .gh-head-menu .right .nav li:last-child {
         border-bottom: none;
     }
+
     #gh-head .gh-head-menu .nav a {
         padding: 0.5em 0 0.6em;
         line-height: 1.4em;
     }
+
     #gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
+
     #gh-head .gh-head-actions {
         padding: 20px 0;
         justify-content: center;
         text-align: left;
     }
+
     #gh-head .gh-head-actions a {
         margin: 0 10px;
     }
+
     #gh-head .gh-head-brand {
         order: 1;
     }
+
     #gh-head .gh-head-menu {
         order: 2;
     }
@@ -641,11 +650,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     #gh-head .gh-head-menu {
         display: none;
     }
+
     /* Open the menu */
     .gh-head-open {
         overflow: hidden;
         height: 100vh;
     }
+
     .gh-head-open #gh-head {
         position: fixed;
         top: 0;
@@ -655,9 +666,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         z-index: 3999999;
         overflow-y: scroll;
     }
+
     .gh-head-open #gh-head .gh-head-inner {
         grid-template-rows: auto 1fr auto;
     }
+
     .gh-head-open #gh-head .gh-head-actions,
     .gh-head-open #gh-head .gh-head-menu {
         display: flex;
@@ -673,16 +686,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .section.first {
     justify-content: flex-start;
-    padding-top: 8vmin;
-}
-
-.section h2,
-.section .icon-header {
-    text-transform: uppercase;
 }
 
 .section .icon-header {
     color: var(--ghost-accent-color);
+}
+.section .icon-header i {
+    font-size: 5.5em;
 }
 
 .section p {
@@ -728,7 +738,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .section-header h2 {
     text-align: center;
     color: white;
-    margin-top: 1em;
+    margin: 1em;
+}
+
+.light .section-header h2 {
+    color: var(--ghost-accent-color);
 }
 
 .section.blue {
@@ -741,13 +755,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .section.light {
     background: white;
-    border-top: 4vmin solid var(--ghost-accent-color);
 }
 
 .section .twocolumns {
     display: grid;
     grid-template-columns: 1fr;
-    
     align-items: flex-start;
     margin: 0 auto;
 }
@@ -760,7 +772,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 @media (min-width: 900px) {
     .section .twocolumns {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 8vmin;
+        grid-gap: 4vmin;
         padding: 0 2vmin;
     }
     
@@ -769,29 +781,22 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-/* Full width card
-/* ---------------------------------------------------------- */
-
-.full-card {
-    grid-column: full-start/full-end;
-}
-.wide-card {
-    grid-column: wide-start/wide-end;
-}
-
 /* Three content boxes
 /* ---------------------------------------------------------- */
 
 .three-box-card {
     background: var(--color-lightgrey);
-    padding: 2vmin 0;
+    margin-top: 0!important;
 }
+
 .three-box-card .outer {
     display: grid;
     grid-column: wide-start/wide-end;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2em;
-    padding: 2em;
+    padding: 2em 2em 4em;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .three-box-card .box-card {
@@ -823,7 +828,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     font-size: 0.85em;
     margin: 1em;
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 1fr 10fr;
     align-items: baseline;
 }
 
@@ -847,12 +852,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .icon-header {
     display: flex;
-    grid-gap: 0.5em;
-    align-items: center;
-}
-
-.icon-header i {
-    font-size: 1.5em;
+    grid-gap: 1em;
+    align-items: flex-start;
 }
 
 .icon-header h3 {
@@ -889,7 +890,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .scroll-icon-wrapper {
     position: relative;
     height: 60px;
-    margin-top: 3em;
+    margin: 2em 0 0;
 }
 
 .scroll-icon {
@@ -986,6 +987,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-template-rows: 1fr 1fr 1fr;
     text-decoration: none;
     align-items: center;
+    grid-gap: 0 1em;
 }
 
 .cert-links li figure {
@@ -1122,14 +1124,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
-/* Post cards */
 .post-card-excerpt {
     max-width: 50em;
     margin: 0 auto;
-    color: white;
+    color: rgb(255 255 255 / 70%);
 }
 
 .post-card-excerpt p {
@@ -1138,21 +1138,21 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-word;
-    text-align: center;
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1.6em;
     margin: 0.5em 0;
-    padding: 0 2em;
 }
 
 .post-card-large .post-card-excerpt p {
-    font-size: 2em;
+    font-size: 1em;
+    margin: 0;
 }
 
 .post-card-meta {
     align-items: center;
     margin-top: 1vh;
     padding: 0;
+    display: flex;
 }
 
 .post-card-featured {
@@ -1204,13 +1204,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-byline-content {
-    flex: 1 1 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 0 8px;;
+    margin: 0 0 0 8px;
     font-size: 1.4rem;
     line-height: 1.2em;
     font-weight: 400;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .post-card-byline-content span {
@@ -1218,7 +1218,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-byline-content a {
-    color: color-mod(var(--color-darkmode) l(+15%));
+    color: var(--color-midgrey);
     font-weight: 600;
 }
 
@@ -1270,18 +1270,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     list-style: none;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 0 3em;
+    font-size: 0.5em;
 }
 
 .tagcloud li {
     display: flex;
     align-items: center;
     margin: 0.5em;
-    background-color: color-mod(var(--color-lightgrey) l(90%));
+    background-color: rgb(230 230 230 / 16%);
     border-radius: 0.5em;
 }
 
 .tagcloud li a {
-    padding: 1em 2em;
+    padding: 0 1em;
 }
 
 .tagcloud li:hover {
@@ -1347,7 +1349,7 @@ make sure this only happens on large viewports / desktop-ish devices.
         grid-column: 1 / span 3;
         display: grid;
         grid-gap: 4vmin;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         min-height: 280px;
         border-top: 0;
     }
@@ -1367,7 +1369,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-feed .post-card-large .post-card-image-link {
         position: relative;
-        order: 2;
+        grid-column: 1 / span 2;
         margin-bottom: 0;
         min-height: 380px;
     }
@@ -1396,7 +1398,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-feed .post-card-large .post-card-title {
         margin-top: 0;
-        font-size: 6.2em;
     }
 
     .post-feed.list .post-card-large .post-card-title {
@@ -1704,7 +1705,7 @@ git
     }
 
     .gh-content > * + * {
-        margin-top: 8vmin!important;
+        margin-top: 8vmin;
     }
     
 }
@@ -1760,27 +1761,31 @@ make sure they look good, and are given a bit of extra spacing. */
 }
 
 .kg-card.kg-header-card.kg-style-dark {
-    background: var(--color-darkmode);
+    background: var(--ghost-first-color);
 }
 
-.kg-header-card.kg-style-light h2.kg-header-card-header {
-    color: color-mod(var(--color-darkmode) l(-5%));
+.kg-card.kg-header-card.kg-style-light {
+    background: var(--color-lightgrey);
+    color: var(--ghost-accent-color);
 }
 
-.has-serif-title .kg-header-card h2.kg-header-card-header {
-    font-family: var(--font-serif);
+.kg-card.kg-header-card.kg-size-small h2.kg-header-card-header {
+    font-size: 3em;
+}
+
+.kg-header-card.kg-size-small h3.kg-header-card-subheader {
+    color: var(--color-darkmode);
 }
 
 .kg-card.kg-header-card.kg-size-small {
-    padding: 4vh 2vh;
-    min-height: 20vh;
+    padding: 4vh;
+    min-height: 10vh;
     margin-top: 0;
 }
 
 .kg-product-card-container {
     max-width: 650px;
 }
-
 
 /* Captions */
 figcaption {
@@ -2027,6 +2032,10 @@ figcaption a {
 
 /* Contact form
 /* ---------------------------------------------------------- */
+
+#contact-form .outer {
+    padding-bottom: 4vmin;
+}
 .contact-form-outer {
     grid-column: wide-start/wide-end;
     padding-top: 4vmin;
@@ -2512,10 +2521,9 @@ button.form-submit i {
 
 .site-footer .outer {
     max-width: 1200px;
-    margin: 3vh auto;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .site-footer .inner {
