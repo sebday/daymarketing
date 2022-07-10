@@ -720,7 +720,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .section .kg-toggle-card {
-    border-radius: 1em;
+    border-radius: 0.5em;
     box-shadow: none;
     padding: 0;
 }
@@ -730,7 +730,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .section .kg-toggle-heading {
-    border-radius: 1em;
+    border-radius: 0.5em;
     background: white;
     padding: 1em;
     align-items: center;
@@ -743,18 +743,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .section .kg-toggle-content {
     background: white;
-    border-radius: 0 0 1em 1em;
+    border-radius: 0 0 0.5em 0.5em;
     box-shadow: inset 0 0 0 1px rgb(124 139 154 / 25%);
     padding: 2vmin 0;
+    margin-bottom: 2vmin;
 }
 
-
-
-.section .kg-toggle-content p {
-    margin-top: 0!important;
-}
-
-.section .column h4:before {
+.section h4:before {
     display: block;
     width: 2em;
     height: 4px;
@@ -815,11 +810,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .three-box-card .content .content {
     background: white;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 .three-box-card .content .icon-header {
-    border-radius: 1em 1em 0 0;
+    border-radius: 0.5em 0.5em 0 0;
     align-items: center;
     justify-content: flex-start;
 
@@ -888,7 +883,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .two-column-card .content {
     background: white;
     padding: 2em;
-    border-radius: 1em;
+    border-radius: 0.5em;
 }
 
 .two-column-card .kg-card.kg-button-card {
