@@ -65,89 +65,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="fullpage">
 	
     {{{body}}}
-
     
-    <div class="section fp-auto-height-responsive blue" id="consultation">
-        <section class="gh-content gh-canvas">
-            <div class="kg-card kg-header-card kg-width-full kg-size-small kg-style-accent" >
-                <h2 class="kg-header-card-header">Book a 30 min consultation</h2>
-                <h3 class="kg-header-card-subheader">I will provide a free website &amp; ppc audit</h3>
-            </div>
+    <section class="section fp-auto-height-responsive blue" id="contact-form">
+
+        <div class="gh-canvas">
             <div class="kg-card contact-intro">
-                <figure class="kg-image-card"><img src="/content/images/staff/seb.webp" class="kg-image" alt="Sebastien Day" loading="lazy" width="500" height="500"></figure>
-                <p>See how I can help with no obligation - I will audit your website and ppc account and provide a free report with actionable insights. I'd love to chat!</p>
+                <figure><img src="/content/images/staff/seb.webp" alt="Sebastien Day" width="500" height="500"></figure>
+                <section class="content">
+                    <h2>Supercharged eCommerce</h2>
+                    <p>See how I can help grow your ecommerce business - I will audit your website, PPC and marketing and provide a free report with actionable insights. <br /> <a href="/book/"><i class="fa-solid fa-calendar-days"></i> Prefer to book a meeting?</a> </p>
+                </section>
             </div>
-            <div class="kg-card kg-button-card kg-align-center"><a href="/book/" class="kg-btn kg-btn-accent">Book a free consultation</a></div>
-        </section>           
-        <div class="scroll-outer"><div class="scroll-icon-wrapper"><div class="scroll-icon"></div></div></div>
-    </div>
-    
-    
-    <div class="section fp-auto-height-responsive blue" id="contact-form">
-        <div class="kg-card kg-header-card kg-width-full kg-size-small kg-style-accent" >
-                <h2 class="kg-header-card-header">Would you like to supercharge your marketing?</h2>
-                <h3 class="kg-header-card-subheader">Let's talk</h3>
+            <div class="contact-form-outer">
+                <form id="footer_form" class="contact-form" action="https://formspree.io/f/mlezlzab" method="post">
+                    <input type="hidden" name="_subject" id="email-subject" value="day.marketing enquiry">
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="form-block">
+                                <label for="full-name">Name</label>
+                                <input type="text" class="field" name="name" id="full-name" required>
+                            </div>
+                            <div class="form-block">
+                                <label for="email-address">Email</label>
+                                <input type="email" class="field" name="_replyto" id="email-address" required>
+                            </div>
+                            <div class="form-block">
+                                <label for="telephone">Phone Number</label>
+                                <input type="telephone" class="field" name="telephone" id="telephone">
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <div class="form-block textarea">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="field" name="message" maxlength="5000" data-name="message"></textarea>
+                            </div>
+                        </div>
+                        <div class="inner form-checkboxes">
+                            <div class="form-checkbox">
+                                <label>
+                                    <input type="checkbox" id="adwords" name="adwords" data-name="adwords" class="">
+                                    <span for="adwords">PPC</span>
+                                </label>
+                            </div>
+                            <div class="form-checkbox">
+                                <label>
+                                    <input type="checkbox" id="ecommerce" name="ecommerce" data-name="ecommerce" class="">
+                                    <span for="ecommerce">Ecommerce</span>
+                                </label>
+                            </div>
+                            <div class="form-checkbox">
+                                <label>
+                                    <input type="checkbox" id="cro" name="cro" data-name="cro" class="">
+                                    <span for="cro">Conversion</span>
+                                </label>
+                            </div>
+                            <div class="form-checkbox">
+                                <label>
+                                    <input type="checkbox" id="email_marketing" name="email_marketing" data-name="email_marketing" class="">
+                                    <span for="email_marketing">Email</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="inner">
+                            <button type="submit" class="form-submit" name="submit" value="submit">Let's talk <i class="fas fa-comment-dots"></i></button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        <div class="contact-form-outer">
-            <form id="footer_form" class="contact-form" action="https://formspree.io/f/mlezlzab" method="post">
-                <input type="hidden" name="_subject" id="email-subject" value="day.marketing enquiry">
-                <div class="outer">
-                    <div class="inner">
-                        <div class="form-block">
-                            <label for="full-name">Name</label>
-                            <input type="text" class="field" name="name" id="full-name" required>
-                        </div>
-                        <div class="form-block">
-                            <label for="email-address">Email</label>
-                            <input type="email" class="field" name="_replyto" id="email-address" required>
-                        </div>
-                        <div class="form-block">
-                            <label for="telephone">Phone Number</label>
-                            <input type="telephone" class="field" name="telephone" id="telephone">
-                        </div>
-                    </div>
-                    <div class="inner">
-                        <div class="form-block textarea">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="field" name="message" maxlength="5000" data-name="message"></textarea>
-                        </div>
-                    </div>
-                    <div class="inner form-checkboxes">
-                        <div class="form-checkbox">
-                            <label>
-                                <input type="checkbox" id="adwords" name="adwords" data-name="adwords" class="">
-                                <span for="adwords">Google Ads Management</span>
-                            </label>
-                        </div>
-                        <div class="form-checkbox">
-                            <label>
-                                <input type="checkbox" id="ecommerce" name="ecommerce" data-name="ecommerce" class="">
-                                <span for="ecommerce">Ecommerce Consultant</span>
-                            </label>
-                        </div>
-                        <div class="form-checkbox">
-                            <label>
-                                <input type="checkbox" id="cro" name="cro" data-name="cro" class="">
-                                <span for="cro">Conversion Science</span>
-                            </label>
-                        </div>
-                        <div class="form-checkbox">
-                            <label>
-                                <input type="checkbox" id="email_marketing" name="email_marketing" data-name="email_marketing" class="">
-                                <span for="email_marketing">Email Marketing</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="inner">
-                        <a href="/book/"><i class="fa-solid fa-calendar-days"></i> Prefer to book a meeting?</a> 
-                        <button type="submit" class="form-submit" name="submit" value="submit">Let's talk <i class="fas fa-comment-dots"></i></button>
-                    </div>
-                </div>
-            </form>
         </div>
-    </div>
+    </section>
 
-    <div class="section fp-auto-height dark" id="footer">
+    <section class="section dark fp-auto-height-responsive" id="footer">
         <footer class="site-footer">
             <div class="outer">
                 <div class="inner">
@@ -194,7 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <section class="built-by">Built by seb with <i class="fa-solid fa-heart"></i> and powered by <a href="https://github.com/sebday/day.marketing-casper" rel="noopener noreferrer nofollow" target="_blank">Ghost.</a>
             </div>
         </footer>
-    </div>
+    </section>
 
 </div>
 
@@ -252,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         }
 
-        if($(window).scrollTop() === 0) {
+        if($(window).scrollTop() < 150) {
              $('#gh-head').removeClass('nav-up').removeClass('nav-down').addClass('nav-top');
         }
         

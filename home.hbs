@@ -2,7 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="section " id="home">
+<div class="section" id="home">
     {{#match @custom.publication_cover_style "!=" "None"}}
         <div class="site-header-content{{#match @custom.publication_cover_style "Large"}} large{{/match}}">
             {{#if @site.cover_image}}
@@ -21,7 +21,7 @@ into the {body} of the default.hbs template --}}
             <div class="outer">
                 <h2>Hi, I'm Sebastien Day</h2>
                 <h1>eCommerce & PPC Consultant</h1>
-                <section class="excerpt">I spent 16 years as CTO at SGS helping them grow to a £31 million turnover leading <a href="/about">e-commerce retailer</a> -  now I can grow your business too.</section>
+                <section class="excerpt">I spent 16 years as CTO at SGS helping them grow to a <strong>£31 million turnover</strong> leading e-commerce retailer -  now I can grow your business too.</section>
                 <div class="button cta-button">
                     <a href="/contact/" class="post-button">book a free audit {{> "icons/comment-dots"}}</a>
                 </div>
@@ -31,7 +31,7 @@ into the {body} of the default.hbs template --}}
     {{/match}}
 </div>
 
-<div class="section first fp-auto-height-responsive" id="services">
+<div class="section fp-auto-height-responsive" id="services">
    
     <div class="inner posts">
         <div class="section-header"><h2>Digital Marketing Services</h2></div>
@@ -55,7 +55,7 @@ into the {body} of the default.hbs template --}}
 
         <div class="column">
             <div class="content">  
-                <h2>About Me</h2>
+                <div class="icon-header"><h2>About Me</h2></div>
                 <h4>Geek since 1992</h4>
                 <figure class="kg-image-card"><img src="https://day.marketing/content/images/staff/seb.webp" class="kg-image" alt="" loading="lazy" width="500" height="500"></figure>
                 <ul id="achievements" class="cert-links">
@@ -71,7 +71,7 @@ into the {body} of the default.hbs template --}}
                         <a target="blank" href="https://skillshop.exceedlms.com/student/award/UwodewvNt76zEu1SMEEbxd3N">
                             <figure class="kg-image-card"><img src="/content/images/posts/googleadslogo.webp" class="kg-image" alt="Google Ads logo" loading="lazy" width="75" height="75"></figure>
                             <h5>Shopping Ads Certification </h5>
-                            <span>Issued Jul 2022 · Expires Jul 2023</span>
+                            <span>Issued Jul 2022</span>
                             <button>Show credential <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
                         </a>
                     </li>
@@ -81,8 +81,10 @@ into the {body} of the default.hbs template --}}
 
         <div class="column">
             <div class="content">      
-                <div class="icon-header"><i class="fa-solid fa-clipboard-check"></i><h3>A Brief Intro</h3></div>
+                <div class="icon-header"><h2>A Brief Intro</h2></div>
                 <p>I worked as CTO at SGS Engineering for 16 years helping them grow to £31 million turnover in 2021. Heading up all things digital including developing the Magento website, managing email marketing and procuring products.</p>
+
+                <p><a href="/about">Read more about me</a> and my work at SGS and follow an ecommerce site over a decade.</p>
                 
                 <p>In June 2022 I founded my own consulting company to help other ecommerce businesses grow.</p>
                 <p>My lifelong passion for computing coupled with the experience of being on the frontline, building an ecommerce business, has given me a great depth of knowledge. 

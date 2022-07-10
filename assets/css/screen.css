@@ -64,11 +64,6 @@ production stylesheet in assets/built/screen.css
     color: var(--color-green);
 }
 
-.blue i, .blue h3,
-.blue .kg-toggle-heading svg {
-    color: var(--ghost-accent-color);
-}
-
 .purple i, .purple h3,
 .purple .kg-toggle-heading svg {
     color: var(--color-purple);
@@ -146,7 +141,7 @@ production stylesheet in assets/built/screen.css
     height: 11px;
     border-width: 0 2px 2px 0;
     border-style: solid;
-    border-color: #00a8a8;
+    border-color: var(--ghost-accent-color);
     transform-origin: bottom left;
     transform: rotate(45deg);
 }
@@ -209,7 +204,7 @@ production stylesheet in assets/built/screen.css
     font-size: 2.5rem;
     font-weight: 400;
     color: #fff;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #15171a, #00314e, #25a7f5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -240,12 +235,9 @@ production stylesheet in assets/built/screen.css
 }
 
 .site-header-content h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 300;
     margin: 0;
-    letter-spacing: -.01em;
-    color: white!important;
-    margin: 0!important;
 }
 
 .site-header-content h1 span {
@@ -268,13 +260,22 @@ production stylesheet in assets/built/screen.css
     margin: 1em auto;
 }
 
+.site-header-content strong {
+    color: var(--color-yellow);
+}
+
 .site-header-content .button {
       margin: 1em 0;  
 }
 
 @media (max-width: 500px) {
     .site-header-content h1 {
-        font-size: 1.8em;
+        font-size: 2.4em;
+    }
+
+    .site-header-content h2 {
+        margin-bottom: 0.25em;
+        font-size: 1.3em;
     }
 
     .site-header-content .excerpt {
@@ -672,20 +673,30 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .section.first {
     justify-content: flex-start;
-    padding-top: 75px;
+    padding-top: 8vmin;
 }
 
 .section h2,
 .section .icon-header {
-    color: var(--ghost-accent-color);
     text-transform: uppercase;
-    margin: 0 0 0.5em;
+}
+
+.section .icon-header {
+    color: var(--ghost-accent-color);
 }
 
 .section p {
     font-size: 1em;
     line-height: 1.6em;
-    margin: 2em 1em;
+    margin: 0 1em 2em;
+}
+
+.section .content p a {
+    color: var(--ghost-accent-color);
+}
+
+.section p a:hover {
+    text-decoration: underline;
 }
 
 .section h3 {
@@ -717,6 +728,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .section-header h2 {
     text-align: center;
     color: white;
+    margin-top: 1em;
 }
 
 .section.blue {
@@ -735,19 +747,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .section .twocolumns {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 8vmin;
+    
     align-items: flex-start;
     margin: 0 auto;
 }
 
 .section .twocolumns .content {
     background: white;
-    padding: 4vmin;
+    padding: 2em;
 }
 
 @media (min-width: 900px) {
     .section .twocolumns {
         grid-template-columns: 1fr 1fr;
+        grid-gap: 8vmin;
         padding: 0 2vmin;
     }
     
@@ -914,6 +927,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     0%{opacity:1}to{opacity:0;-webkit-transform:translateY(34px);transform:translateY(34px)}
 }
 
+@media (max-width: 500px) {
+    .scroll-icon-wrapper {
+        margin-top: 0;
+    }
+    .scroll-icon-wrapper:not(.site-header-content .scroll-icon-wrapper) {
+        display: none;
+    }
+}
+
 /* Brand logos */
 /* ---------------------------------------------------------- */
 
@@ -950,7 +972,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: grid;
     grid-template-columns: 1fr;
     list-style: none;
-    margin: 0;
+    margin: 1em 0 0;
     padding: 0;
 }
 
@@ -1011,6 +1033,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media (max-width: 700px) {
     .post-feed {
         grid-template-columns: 1fr;
@@ -2005,17 +2028,15 @@ figcaption a {
 /* Contact form
 /* ---------------------------------------------------------- */
 .contact-form-outer {
-    grid-column: full-start/full-end;
-    padding: 0 4vmin 4vmin;
-    background: var(--ghost-accent-color);
+    grid-column: wide-start/wide-end;
+    padding-top: 4vmin;
 }
 
 .contact-form .outer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 0;
 }
 
 .contact-form .form-block {
@@ -2032,6 +2053,10 @@ figcaption a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.contact-form .inner:last-child button {
+    width: 100%;
 }
 
 .contact-form .inner:last-child a:hover {
@@ -2118,18 +2143,26 @@ figcaption a {
 
 /* Avatar intro block on contact page */
 .contact-intro {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2em;
+    grid-column: wide-start/wide-end;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 2em;
     align-items: center;
     color: white;
+    padding-top: 1em;
 }
 
 .contact-intro figure {
-   border-left: 5px solid var(--ghost-accent-color);
+   border-left: 5px solid var(--color-darkmode);
+}
+
+.contact-intro h2 {
+    color: var(--color-yellow);
+}
+
+.contact-intro p {
+    color: rgb(255 255 255 / 85%);
+    margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -2147,6 +2180,9 @@ figcaption a {
     .calendly-inline-widget {
         height: 1150px;
     } 
+    .contact-intro p {
+        margin: 0 2em;
+    }
 }
 
 /* Youtube wrapper */
@@ -2496,7 +2532,7 @@ button.form-submit i {
 .site-footer address li {
     margin: 1em 0;
     list-style: none;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .site-footer address svg {
