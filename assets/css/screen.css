@@ -85,15 +85,15 @@ production stylesheet in assets/built/screen.css
 
 /* Backgrounds */
 /* ---------------------------------------------------------- */
-.box-card.green .icon-header {
+.content.green .icon-header {
     background: var(--color-green);
 }
 
-.box-card.purple .icon-header {
+.content.purple .icon-header {
     background: var(--color-purple);
 }
 
-.box-card.pink .icon-header {
+.content.pink .icon-header {
     background: var(--color-pink);
 }
 
@@ -195,7 +195,7 @@ production stylesheet in assets/built/screen.css
     font-size: 2.5rem;
     font-weight: 400;
     color: #fff;
-    background: linear-gradient(-45deg, #23d5ab, #25a7f5, #15171a, #00314e);
+    background: linear-gradient(-45deg,#2196f3,#25a7f5,#e73c7e,#f44336);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -256,6 +256,10 @@ production stylesheet in assets/built/screen.css
 }
 
 @media (max-width: 500px) {
+    .site-header-content {
+        height: 100vh;
+    }
+    
     .site-header-content h1 {
         font-size: 2.4em;
     }
@@ -391,7 +395,8 @@ production stylesheet in assets/built/screen.css
 }
 
 .gh-head-menu .nav a:hover {
-    color: var(--ghost-accent-color);
+    color: var(--color-yellow);
+    font-weight: 600;
 }
 
 /* Secondary Navigation
@@ -554,7 +559,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     
 
     #gh-head.nav-down:not(#gh-head.nav-top) {
-        background: var(--color-darkmode);
+        background: var(--ghost-first-color);
     }
 }
 
@@ -728,6 +733,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     border-radius: 1em;
     background: white;
     padding: 1em;
+    align-items: center;
+    text-align: right;
 }
 
 .kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
@@ -782,37 +789,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     background: white;
 }
 
-.section .twocolumns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
-    margin: 0 auto;
-    padding: 0 2vmin;
-    grid-gap: 4vmin;       
-}
-
-.section .twocolumns .content {
-    background: white;
-    padding: 2em;
-    border-radius: 1em;
-    margin-bottom: 4vmin;
-}
-
 @media (max-width: 500px) {
-    .section .twocolumns {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-        padding: 0;
-    }
-    
-    .section .twocolumns .content {
-        background: none;
-    }
-
-    .section .twocolumns .content p {
-        color: white;
-    }
-
     .section-header h2 {
         font-size: 1em;
     }
@@ -831,57 +808,56 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0 auto;
 }
 
-.three-box-card .box-card {
+.three-box-card .content {
     
     padding: 0;
 }
 
-.three-box-card .box-card .content {
+.three-box-card .content .content {
     background: white;
     border-radius: 1em;
 }
 
-.three-box-card .box-card .icon-header {
+.three-box-card .content .icon-header {
     border-radius: 1em 1em 0 0;
     align-items: center;
     justify-content: flex-start;
 
 }
 
-.three-box-card .box-card h3,
-.three-box-card .box-card i {
+.three-box-card .content h3,
+.three-box-card .content i {
     color: white;
     margin: 0;
     font-size: 1.4em;
     padding: 0.25em;
 }
 
-.three-box-card .box-card p {
+.three-box-card .content p {
     margin: 0;
     padding: 1em;
     font-size: 1.2em;
     line-height: 1.4em;
 }
 
-.three-box-card .box-card i {
+.three-box-card .content i {
     font-size: 2em;
     margin-left: 0.25em;
 }
 
-.three-box-card .box-card ul {
+.three-box-card .content ul {
     list-style: none;
     margin: 2em 0;
 }
 
-.three-box-card .box-card li {
-    font-size: 0.85em;
+.three-box-card .content li {
     margin: 1em;
     display: grid;
     grid-template-columns: 1fr 10fr;
     align-items: baseline;
 }
 
-.three-box-card .box-card li::before {
+.three-box-card .content li::before {
     content: "";
     width: 8px;
     height: 8px;
@@ -895,6 +871,47 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         grid-template-columns: 1fr;
         padding: 0;
     }
+}
+
+/* Three content boxes
+/* ---------------------------------------------------------- */
+
+.two-column-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 0 2vmin;
+    grid-gap: 4vmin;       
+}
+
+.two-column-card .content {
+    background: white;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.two-column-card .kg-card.kg-button-card {
+    grid-column: 1 / span 2;
+    margin-bottom: 8vmin;
+}
+
+@media (max-width: 500px) {
+    .two-column-card {
+        grid-template-columns: 1fr;
+        padding: 0;
+        grid-gap: 4vmin 0;
+    }
+
+    .two-column-card .content {
+        grid-column: 1;
+    }
+}
+@media (min-width: 500px) {
+    .two-column-card .content:first-child {
+        grid-row: 1 / span 2;
+    }
+    
 }
 
 /* Agency post specific 
@@ -913,6 +930,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .icon-header h3 {
     margin: 0;
+    font-size: 1.4em;
 }
 
 .list-icons {
@@ -1042,7 +1060,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .cert-links li a {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 1fr 1fr;
     text-decoration: none;
     align-items: center;
@@ -1808,7 +1826,7 @@ make sure they look good, and are given a bit of extra spacing. */
 }
 
 .gh-content .kg-card.kg-button-card {
-    margin: 4vh 0 2vh;
+    margin: 4vh 0;
     font-size: 1.2em;
 }
 
@@ -2509,17 +2527,18 @@ button.form-submit i {
 /* ---------------------------------------------------------- */
 
 .error-content {
-    padding: 14vw 4vw 6vw;
+    padding: 4vw;
+    background: var(--ghost-first-color);
 }
 
 .error-message {
-    padding-bottom: 10vw;
+    padding: 10vw 0;
     text-align: center;
 }
 
 .error-code {
     margin: 0;
-    color: var(--ghost-accent-color);
+    color: white;
     font-size: 12vw;
     line-height: 1em;
     letter-spacing: -5px;
@@ -2527,7 +2546,7 @@ button.form-submit i {
 
 .error-description {
     margin: 0;
-    color: var(--color-midgrey);
+    color: var(--color-lightgrey);
     font-size: 3.2rem;
     line-height: 1.3em;
     font-weight: 400;
