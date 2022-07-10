@@ -59,33 +59,27 @@ production stylesheet in assets/built/screen.css
 
 /* Colours sequence */
 /* ---------------------------------------------------------- */
-.green i, .green h3,
-.green .kg-toggle-heading svg  {
+.green i, .green h3 {
     color: var(--color-green);
 }
 
-.purple i, .purple h3,
-.purple .kg-toggle-heading svg {
+.purple i, .purple h3 {
     color: var(--color-purple);
 }
 
-.red i, .red h3,
-.red .kg-toggle-heading svg {
+.red i, .red h3 {
     color: var(--color-red);
 }
 
-.orange i, .orange h3,
-.orange .kg-toggle-heading svg {
+.orange i, .orange h3{
     color: var(--color-orange);
 }
 
-.pink i, .pink h3,
-.pink .kg-toggle-heading svg {
+.pink i, .pink h3 {
     color: var(--color-pink);
 }
 
-.yellow i, .yellow h3,
-.yellow .kg-toggle-heading svg {
+.yellow i, .yellow h3 {
     color: var(--color-yellow);
 }
 
@@ -721,7 +715,36 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .section .kg-toggle-card {
+    border-radius: 1em;
+    box-shadow: none;
+    padding: 0;
+}
+
+.section .kg-toggle-card + .kg-toggle-card {
+    margin: 0;
+}
+
+.section .kg-toggle-heading {
+    border-radius: 1em;
     background: white;
+    padding: 1em;
+}
+
+.kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
+    border-radius: 1em 1em 0 0;
+}
+
+.section .kg-toggle-content {
+    background: white;
+    border-radius: 0 0 1em 1em;
+    box-shadow: inset 0 0 0 1px rgb(124 139 154 / 25%);
+    padding: 2vmin 0;
+}
+
+
+
+.section .kg-toggle-content p {
+    margin-top: 0!important;
 }
 
 .section .column h4:before {
@@ -737,7 +760,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .section-header h2 {
     text-align: center;
     color: white;
-    margin: 1em;
 }
 
 .light .section-header h2 {
@@ -762,9 +784,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .section .twocolumns {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     margin: 0 auto;
+    padding: 0 2vmin;
+    grid-gap: 4vmin;       
 }
 
 .section .twocolumns .content {
@@ -774,15 +798,23 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin-bottom: 4vmin;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 500px) {
     .section .twocolumns {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 4vmin;
-        padding: 0 2vmin;
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+        padding: 0;
     }
     
+    .section .twocolumns .content {
+        background: none;
+    }
+
+    .section .twocolumns .content p {
+        color: white;
+    }
+
     .section-header h2 {
-        font-size: 3em;
+        font-size: 1em;
     }
 }
 
@@ -800,13 +832,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .three-box-card .box-card {
+    
+    padding: 0;
+}
+
+.three-box-card .box-card .content {
     background: white;
     border-radius: 1em;
 }
 
 .three-box-card .box-card .icon-header {
-    align-items: center;
     border-radius: 1em 1em 0 0;
+    align-items: center;
+    justify-content: flex-start;
+
 }
 
 .three-box-card .box-card h3,
@@ -818,6 +857,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .three-box-card .box-card p {
+    margin: 0;
     padding: 1em;
     font-size: 1.2em;
     line-height: 1.4em;
@@ -1772,21 +1812,9 @@ make sure they look good, and are given a bit of extra spacing. */
     font-size: 1.2em;
 }
 
-.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
-    font-family: var(--font-serif);
-}
 
 .gh-content .kg-callout-card-accent a {
     text-decoration: underline;
-}
-
-.kg-blockquote-alt {
-    font-family: var(--font-serif);
-    color: var(--color-midgrey);
-}
-
-.has-sans-body .kg-blockquote-alt {
-    font-family: var(--font-sans);
 }
 
 .kg-card.kg-header-card.kg-style-dark {
@@ -1807,7 +1835,7 @@ make sure they look good, and are given a bit of extra spacing. */
 }
 
 .kg-card.kg-header-card.kg-size-small {
-    padding: 4vmin;
+    padding: 4vh;
     min-height: 10vh;
     margin-top: 0;
 }
@@ -1892,7 +1920,6 @@ figcaption a {
     }
 }
 @media (max-width: 600px) {
-    
     .kg-card.kg-header-card.kg-size-small h2.kg-header-card-header {
         font-size: 2em;
     }
