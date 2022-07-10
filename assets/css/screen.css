@@ -49,8 +49,8 @@ production stylesheet in assets/built/screen.css
     --color-secondary-text: #979797;
 
     /* Fonts */
-    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    --font-serif: Georgia, Times, serif;
+    --font-sans-serif: "Lato", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: "Raleway", sans-serif;
     --font-mono: Menlo, Courier, monospace;
 
 }
@@ -111,10 +111,6 @@ production stylesheet in assets/built/screen.css
     background: var(--color-pink);
 }
 
-.section.dark {
-    background: var(--color-darkmode);
-}
-
 /* Generic formatting */
 /* ---------------------------------------------------------- */
 
@@ -126,9 +122,33 @@ production stylesheet in assets/built/screen.css
     text-align: center;
 }
 
-ul.small { 
+.pretty-list {
+    margin: 0 0 0 3vmin;
+    padding: 0;
+    list-style: none;
     font-size: 0.85em;
-    margin-left: 2em;
+}
+  
+.pretty-list li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pretty-list li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #00a8a8;
+    transform-origin: bottom left;
+    transform: rotate(45deg);
 }
 
 /* 2. Layout - Page building blocks
@@ -224,7 +244,8 @@ ul.small {
     font-weight: 300;
     margin: 0;
     letter-spacing: -.01em;
-    color: white;
+    color: white!important;
+    margin: 0!important;
 }
 
 .site-header-content h1 span {
@@ -298,6 +319,13 @@ ul.small {
     align-items: center;
 }
 
+.gh-head.nav-down {
+    background: var(--color-darkmode);
+}
+
+.gh-head.nav-top {
+    background: none;
+}
 
 /* Brand
 /* ---------------------------------------------------------- */
@@ -377,7 +405,6 @@ ul.small {
 .gh-head-menu .nav a:hover {
     color: var(--ghost-accent-color);
 }
-
 
 /* Secondary Navigation
 /* ---------------------------------------------------------- */
@@ -636,20 +663,332 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 }
 
-/* 6. Sections
+/* Full page sections
 /* ---------------------------------------------------------- */
 
 .section {
+    background: var(--ghost-first-color);
+}
+
+.section.first {
+    justify-content: flex-start;
+    padding-top: 75px;
+}
+
+.section h2,
+.section .icon-header {
+    color: var(--ghost-accent-color);
+    text-transform: uppercase;
+    margin: 0 0 0.5em;
+}
+
+.section p {
+    font-size: 1em;
+    line-height: 1.6em;
+    margin: 2em 1em;
+}
+
+.section h3 {
+    margin: 0 0 1em;
+}
+
+.section h4 {
+    margin: 0 0 2em 2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-gap: 1em;
+}
+
+.section h5 {
+    margin: 0;
+}
+
+.section .column h4:before {
+    display: block;
+    width: 2em;
+    height: 4px;
+    content: "";
     background: var(--ghost-accent-color);
+    transition: transform .3s cubic-bezier(.2,.6,.3,1),width .3s cubic-bezier(.2,.6,.3,1);
+    will-change: transform,width;
 }
 
 .section-header h2 {
-    font-size: 3em;
     text-align: center;
-    margin: 2em 0 1em;
     color: white;
 }
 
+.section.blue {
+    background: var(--ghost-accent-color);
+}
+
+.section.dark {
+    background: var(--color-darkmode);
+}
+
+.section.light {
+    background: white;
+    border-top: 4vmin solid var(--ghost-accent-color);
+}
+
+.section .twocolumns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8vmin;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+.section .twocolumns .content {
+    background: white;
+    padding: 4vmin;
+}
+
+@media (min-width: 900px) {
+    .section .twocolumns {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 2vmin;
+    }
+    
+    .section-header h2 {
+        font-size: 3em;
+    }
+}
+
+/* Full width card
+/* ---------------------------------------------------------- */
+
+.full-card {
+    grid-column: full-start/full-end;
+}
+.wide-card {
+    grid-column: wide-start/wide-end;
+}
+
+/* Three content boxes
+/* ---------------------------------------------------------- */
+
+.three-box-card {
+    background: var(--color-lightgrey);
+    padding: 2vmin 0;
+}
+.three-box-card .outer {
+    display: grid;
+    grid-column: wide-start/wide-end;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2em;
+    padding: 2em;
+}
+
+.three-box-card .box-card {
+    background: white;
+    border-radius: 1em;
+}
+
+.three-box-card .box-card .icon-header {
+    justify-content: center;
+}
+
+.three-box-card .box-card h3,
+.three-box-card .box-card i {
+    color: white;
+    margin: 0;
+}
+
+.three-box-card .box-card i {
+    font-size: 2em;
+    padding: 0.25em;
+}
+
+.three-box-card .box-card ul {
+    list-style: none;
+    margin: 2em 0;
+}
+
+.three-box-card .box-card li {
+    font-size: 0.85em;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    align-items: baseline;
+}
+
+.three-box-card .box-card li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #00c3fd;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+/* Agency post specific 
+/* ---------------------------------------------------------- */
+.tag-hash-agency .site-header-content {
+    min-height: 50vh;
+}
+
+/* Icons */
+/* ---------------------------------------------------------- */
+
+.icon-header {
+    display: flex;
+    grid-gap: 0.5em;
+    align-items: center;
+}
+
+.icon-header i {
+    font-size: 1.5em;
+}
+
+.icon-header h3 {
+    margin: 0;
+}
+
+.list-icons {
+    display: flex;
+    grid-gap: 3em 1em;
+    align-items: center;
+}
+
+.list-icons li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.4em;
+    display: flex;
+    grid-gap: 1em;
+    align-items: center;
+}
+
+.list-icons li h3 {
+    margin: 1em 0 0.5em;
+}
+
+.list-icons li i {
+    font-size: 3em;
+}
+
+/* Scrolling icon */
+/* ---------------------------------------------------------- */
+
+.scroll-icon-wrapper {
+    position: relative;
+    height: 60px;
+    margin-top: 3em;
+}
+
+.scroll-icon {
+    width: 32px;
+    height: 57px;
+    margin-left: -20px;
+    top: 50%;
+    margin-top: -35px;
+    box-shadow: inset 0 0 0 2px #fff;
+    border-radius: 16px;
+}
+
+.scroll-icon:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    margin-left: -10px;
+    top: 4px;
+    border-radius: 50%;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+}
+
+.scroll-icon, .scroll-icon:before {
+    position: absolute;
+    left: 50%;
+}
+
+@-webkit-keyframes scroll { 
+    0%{opacity:1}to{opacity:0;-webkit-transform:translateY(34px);transform:translateY(34px)}
+}
+@keyframes scroll {
+    0%{opacity:1}to{opacity:0;-webkit-transform:translateY(34px);transform:translateY(34px)}
+}
+
+/* Brand logos */
+/* ---------------------------------------------------------- */
+
+.brands-outer {
+    background: var(--ghost-accent-color);
+    grid-column: full-start/full-end;
+    margin: 0!important;
+}
+
+.brands {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   
+    grid-gap: 2em;
+    margin: 0 auto;
+    list-style: none;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.brands li {
+    margin: 0;
+    padding: 2em 0;
+}
+
+.brands img {
+    max-height: 30px;
+}
+
+/* Certificate links
+/* ---------------------------------------------------------- */
+
+.cert-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cert-links li {
+    margin: 2em 0;
+}
+
+.cert-links li a {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-decoration: none;
+    align-items: center;
+}
+
+.cert-links li figure {
+    grid-column: auto; 
+    grid-row: 1 / span 3;
+    padding: 0;
+}
+
+.cert-links h4 {
+    margin: 0;
+    font-weight: 300;
+}
+
+.cert-links span,
+.cert-links button {
+    color: var(--color-midgrey);
+    text-align: left;
+    background: none;
+    padding: 0;
+}
+
+.cert-links button i {
+    font-size: 1em;
+    color: var(--ghost-accent-color);
+}
 
 /* 6. Post Feed
 /* ---------------------------------------------------------- */
@@ -657,9 +996,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .post-feed {
     position: relative;
     display: grid;
-    grid-gap: 4vmin;
+    grid-gap: 6vmin 4vmin;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 100%;
 }
 
 .post-feed.list {
@@ -677,12 +1015,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .post-feed {
         grid-template-columns: 1fr;
         grid-gap: 40px;
+        width: 90%;
+        margin: 0 auto 8em;
     }
 }
 
 .post-card {
     position: relative;
-    flex: 1 1 301px;
     display: flex;
     flex-direction: column;
     min-height: 220px;
@@ -742,7 +1081,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-title {
-    margin: 0 0 0.4em;
+    margin: 0 0 0.4em!important;
     font-size: 2.4rem;
     transition: color 0.2s ease-in-out;
     color: white;
@@ -768,15 +1107,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     max-width: 50em;
     margin: 0 auto;
     color: white;
-    font-family: var(--font-serif);
-}
-
-.has-sans-body .post-card-excerpt {
-    font-family: var(--font-sans-serif);
 }
 
 .post-card-excerpt p {
-    margin-bottom: 1em;
     display: -webkit-box;
     overflow: hidden;
     -webkit-line-clamp: 3;
@@ -785,6 +1118,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     text-align: center;
     font-size: 1em;
     line-height: 1.6em;
+    margin: 0.5em 0;
     padding: 0 2em;
 }
 
@@ -901,6 +1235,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 /* Tag cloud /*
 /* ---------------------------------------------------------- */
+
 .tagcloud h3 {
     font-size: 1em;
     color: var(--color-midgrey);
@@ -996,6 +1331,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
     .post-feed .read-more-button a {
         font-size: 1em;
+        padding: 0.5em 1em;
     }
 
     .post-feed .post-card-large .read-more-button a {
@@ -1350,77 +1686,6 @@ git
     
 }
 
-/* Full width card
-/* ---------------------------------------------------------- */
-.full-card {
-    grid-column: full-start/full-end;
-}
-.wide-card {
-    grid-column: wide-start/wide-end;
-}
-
-/* Three content boxes
-/* ---------------------------------------------------------- */
-.three-box-card {
-    background: var(--color-lightgrey);
-    padding: 2vmin 0;
-}
-.three-box-card .outer {
-    display: grid;
-    grid-column: wide-start/wide-end;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2em;
-    padding: 2em;
-}
-
-.three-box-card .box-card {
-    background: white;
-    border-radius: 1em;
-}
-
-.three-box-card .box-card .icon-header {
-    justify-content: center;
-}
-
-.three-box-card .box-card h3,
-.three-box-card .box-card i {
-    color: white;
-    margin: 0;
-}
-
-.three-box-card .box-card i {
-    font-size: 2em;
-    padding: 0.25em;
-}
-
-.three-box-card .box-card ul {
-    list-style: none;
-    margin: 2em 0;
-}
-
-.three-box-card .box-card li {
-    font-size: 0.85em;
-    margin: 1em;
-    display: grid;
-    grid-template-columns: 1fr 7fr;
-    align-items: baseline;
-}
-
-.three-box-card .box-card li::before {
-    content: "";
-    width: 8px;
-    height: 8px;
-    background: #00c3fd;
-    display: inline-block;
-    margin-right: 1em;
-}
-
-/* Agency post specific 
-/* ---------------------------------------------------------- */
-.tag-hash-agency .site-header-content {
-    min-height: 50vh;
-}
-
 /* Cards
 /* ---------------------------------------------------------- */
 
@@ -1670,165 +1935,6 @@ figcaption a {
     border: color-mod(var(--color-lightgrey) l(-95%) s(-5%)) 1px solid;
 }
 
-/* Icons */
-/* ---------------------------------------------------------- */
-
-.icon-header {
-    display: flex;
-    grid-gap: 0.5em;
-    align-items: center;
-}
-
-.list-icons {
-    display: flex;
-    grid-gap: 3em 1em;
-    align-items: center;
-}
-
-.list-icons li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 1.4em;
-    display: flex;
-    grid-gap: 1em;
-    align-items: center;
-}
-
-.list-icons li h3 {
-    margin: 1em 0 0.5em;
-}
-
-.list-icons li i {
-    font-size: 3em;
-}
-
-/* Scrolling icon */
-.scroll-icon-wrapper {
-    position: relative;
-    width: 100%;
-    height: 57px;
-}
-
-.scroll-icon {
-    width: 32px;
-    height: 57px;
-    margin-left: -20px;
-    top: 50%;
-    margin-top: -35px;
-    box-shadow: inset 0 0 0 2px #fff;
-    border-radius: 16px;
-}
-
-.scroll-icon:before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    margin-left: -10px;
-    top: 4px;
-    border-radius: 50%;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-name: scroll;
-}
-
-.scroll-icon, .scroll-icon:before {
-    position: absolute;
-    left: 50%;
-}
-
-@-webkit-keyframes scroll { 
-    0%{opacity:1}to{opacity:0;-webkit-transform:translateY(34px);transform:translateY(34px)}
-}
-@keyframes scroll {
-    0%{opacity:1}to{opacity:0;-webkit-transform:translateY(34px);transform:translateY(34px)}
-}
-
-/* Brand logos */
-
-.brands-outer {
-    background: var(--ghost-accent-color);
-    grid-column: full-start/full-end;
-    margin: 0!important;
-}
-
-.brands {
-    max-width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);   
-    grid-gap: 2em;
-    margin: 0 auto;
-    list-style: none;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.brands li {
-    margin: 0;
-    padding: 2em 0;
-}
-
-.brands img {
-    max-height: 30px;
-}
-
-.pretty-list li {
-    list-style: circle;
-    line-height: 1.6em;
-}
-
-/* Certificate links
-/* ---------------------------------------------------------- */
-.cert-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    grid-column: wide-start/wide-end;
-}
-
-.cert-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-}
-
-.cert-links li {
-    margin: 2em 0;
-}
-
-.cert-links li a {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    text-decoration: none;
-    align-items: center;
-}
-
-.cert-links li figure {
-    grid-column: auto; 
-    grid-row: 1 / span 3;
-    padding: 0;
-}
-
-.cert-links h4 {
-    margin: 0;
-    font-weight: 300;
-}
-
-.cert-links span,
-.cert-links button {
-    color: var(--color-midgrey);
-    text-align: left;
-    background: none;
-    padding: 0;
-}
-
-.cert-links button i {
-    font-size: 1em;
-    color: var(--ghost-accent-color);
-}
-
 /* 7.1. Post Byline
 /* ---------------------------------------------------------- */
 
@@ -1920,15 +2026,6 @@ figcaption a {
 .contact-form .form-block.textarea {
     border: none;
     background: none;
-}
-
-@media (min-width: 900px) {
-    .contact-form .inner:nth-child(1),
-    .contact-form .inner:nth-child(4),
-    .contact-form .inner:nth-child(5) {
-        grid-column: 1 / span 2;
-
-    }
 }
 
 .contact-form .inner:last-child {
@@ -2028,6 +2125,7 @@ figcaption a {
     grid-template-columns: 1fr 2fr;
     grid-gap: 2em;
     align-items: center;
+    color: white;
 }
 
 .contact-intro figure {
@@ -2127,6 +2225,10 @@ figcaption a {
     fill: var(--color-darkmode);
 }
 
+button.form-submit i {
+    color: var(--color-darkmode);
+}
+
 .read-more-button.button svg {
     fill: var(--color-darkmode);
 }
@@ -2138,6 +2240,7 @@ figcaption a {
         font-size: 20px;
         line-height: 1.6em;
         text-align: center;
+        padding: 0.25em 1em;
     }
 }
 
@@ -2385,10 +2488,15 @@ figcaption a {
     font-size: 1.3rem;
 }
 
-.site-footer address li {
+.site-footer address p {
     list-style: none;
-    font-size: 1.7em;
-    margin: 2vh 0;
+    margin: 0;
+}
+
+.site-footer address li {
+    margin: 1em 0;
+    list-style: none;
+    font-size: 2em;
 }
 
 .site-footer address svg {
@@ -2484,10 +2592,12 @@ figcaption a {
 
 .site-footer .tech-stack {
     text-align: center;
+    
 }
 
 .site-footer .tech-stack h2 {
     margin: .3em 0 1.5em 0;
+    color: white;
 }
 
 .site-footer .tech-stack ul {

@@ -16,6 +16,8 @@
     <!-- End Google Tag Manager -->
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     {{ghost_head}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <!-- load all Font Awesome styles -->
     <link rel="preload" href="{{asset "fontawesome/css/all.css"}}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{asset "fontawesome/css/all.css"}}"></noscript>
@@ -28,39 +30,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <header id="gh-head" class="gh-head{{#match @custom.publication_cover_style "!=" "None"}} has-cover{{/match}}">
-        <nav class="gh-head-inner inner gh-container">
-
-            <div class="gh-head-menu">
-                <ul class="nav">
-                    <li class="nav-google-ads"><a href="/google-ads-management/">Google Ads</a></li>
-                    <li class="nav-email"><a href="/ecommerce-growth-consultant/">Ecommerce</a></li>
-                    <li class="nav-cro"><a href="/conversion-rate-optimisation/">CRO</a></li>
-                    <li class="nav-email"><a href="/email-marketing/">Email</a></li>
-                </ul>
-            </div>  
-            <div class="gh-head-brand">
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
-            </div>
-            <div class="gh-head-menu right">
-                <ul class="nav">                   
-                    
-                    <li class="nav-about"><a href="/about/">About</a></li>
-                    <li class="nav-contact"><a href="/contact/">Contact</a></li>
-                    <li class="nav-contact"><a href="/book/">Book</a></li>
-                    <li class="nav-linkedin"><a href="https://www.linkedin.com/in/sebastien-day/" title="Linkedin Profile" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                </ul>
+    <nav class="gh-head-inner inner gh-container">
+        <div class="gh-head-menu">
+            <ul class="nav">
+                <li class="nav-google-ads"><a href="/google-ads-management/">Google Ads</a></li>
+                <li class="nav-email"><a href="/ecommerce-growth-consultant/">Ecommerce</a></li>
+                <li class="nav-cro"><a href="/conversion-rate-optimisation/">CRO</a></li>
+                <li class="nav-email"><a href="/email-marketing/">Email</a></li>
+            </ul>
+        </div>  
+        <div class="gh-head-brand">
+            <a class="gh-head-logo" href="{{@site.url}}">
+                <img src="{{@site.logo}}" alt="{{@site.title}}" />
+            </a>
+            <a class="gh-burger" role="button">
+                <div class="gh-burger-box">
+                    <div class="gh-burger-inner"></div>
+                </div>
+            </a>
+        </div>
+        <div class="gh-head-menu right">
+            <ul class="nav">                   
                 
-            </div>
-        </nav>
-
-    </header>
+                <li class="nav-about"><a href="/about/">About</a></li>
+                <li class="nav-contact"><a href="/contact/">Contact</a></li>
+                <li class="nav-contact"><a href="/book/">Book</a></li>
+                <li class="nav-linkedin"><a href="https://www.linkedin.com/in/sebastien-day/" title="Linkedin Profile" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
     
 <div id="fullpage">
@@ -68,29 +67,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{{body}}}
 
     
-    <div class="section" id="consultation">
-      
+    <div class="section fp-auto-height-responsive blue" id="consultation">
         <section class="gh-content gh-canvas">
             <div class="kg-card kg-header-card kg-width-full kg-size-small kg-style-accent" >
-                <h2 class="kg-header-card-header" id="transparent-pricing">Book a 30 min consultation</h2>
-                <h3 class="kg-header-card-subheader" id="we-like-to-keep-things-simple">I will provide a free website &amp; ppc audit</h3>
+                <h2 class="kg-header-card-header">Book a 30 min consultation</h2>
+                <h3 class="kg-header-card-subheader">I will provide a free website &amp; ppc audit</h3>
             </div>
             <div class="kg-card contact-intro">
-                <figure class="kg-image-card" style="width:20%"><img src="/content/images/staff/seb.webp" class="kg-image" alt="Sebastien Day" loading="lazy" width="500" height="500"></figure>
+                <figure class="kg-image-card"><img src="/content/images/staff/seb.webp" class="kg-image" alt="Sebastien Day" loading="lazy" width="500" height="500"></figure>
                 <p>See how I can help with no obligation - I will audit your website and ppc account and provide a free report with actionable insights. I'd love to chat!</p>
             </div>
             <div class="kg-card kg-button-card kg-align-center"><a href="/book/" class="kg-btn kg-btn-accent">Book a free consultation</a></div>
         </section>           
-
+        <div class="scroll-outer"><div class="scroll-icon-wrapper"><div class="scroll-icon"></div></div></div>
     </div>
     
     
-    <div class="section" id="contact-form">
+    <div class="section fp-auto-height-responsive blue" id="contact-form">
+        <div class="kg-card kg-header-card kg-width-full kg-size-small kg-style-accent" >
+                <h2 class="kg-header-card-header">Would you like to supercharge your marketing?</h2>
+                <h3 class="kg-header-card-subheader">Let's talk</h3>
+            </div>
         <div class="contact-form-outer">
             <form id="footer_form" class="contact-form" action="https://formspree.io/f/mlezlzab" method="post">
                 <input type="hidden" name="_subject" id="email-subject" value="day.marketing enquiry">
                 <div class="outer">
-                    <div class="inner"><h2>Would you like to supercharge your marketing? Let's talk</h2></div>
                     <div class="inner">
                         <div class="form-block">
                             <label for="full-name">Name</label>
@@ -146,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-    <div class="section dark" id="footer">
+    <div class="section fp-auto-height dark" id="footer">
         <footer class="site-footer">
             <div class="outer">
                 <div class="inner">
@@ -214,13 +215,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 </script>
 
-
 <script>
     // Hide Header on on scroll down
     var didScroll;
     var lastScrollTop = 0;
     var delta = 5;
-    var navbarHeight = 50; //$('#gh-head').outerHeight();
+    var navbarHeight = $('#gh-head').outerHeight();
 
     $(window).scroll(function(event){
         didScroll = true;
@@ -242,44 +242,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         // If they scrolled down and are past the navbar, add class .nav-up.
         // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight) {
+        if (st > lastScrollTop && st > navbarHeight){
             // Scroll Down
             $('#gh-head').removeClass('nav-down').removeClass('nav-top').addClass('nav-up');
         } else {
             // Scroll Up
             if(st + $(window).height() < $(document).height()) {
-                $('#gh-head').removeClass('nav-up').removeClass('nav-top').addClass('nav-down');
+                $('#gh-head').removeClass('nav-up').addClass('nav-down');
             }
         }
+
         if($(window).scrollTop() === 0) {
-            $('#gh-head').addClass('nav-top');
+             $('#gh-head').removeClass('nav-up').removeClass('nav-down').addClass('nav-top');
         }
+        
         lastScrollTop = st;
     }
-</script>
-
-{{!-- Two column content scroller --}}
-<script data-cfasync="false">
-    window.addEventListener('DOMContentLoaded', () => {
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                if (entry.intersectionRatio > 0) {
-                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-                } else {
-                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-                }
-            });
-        });
-
-        // Track all sections that have an `id` applied
-        document.querySelectorAll('.scroller.menu section[id]').forEach((section) => {
-            observer.observe(section);
-        });
-
-    });
-
 </script>
 
 {{#match @site.url "https://day.marketing"}}
@@ -301,7 +279,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-        licenseKey: '8K5UI-4OV37-G0HJ8-Y6MQK-BLKDN'
+        licenseKey: '8K5UI-4OV37-G0HJ8-Y6MQK-BLKDN',
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+        responsiveWidth: 500
     });
 </script>
 
