@@ -719,36 +719,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0;
 }
 
-.section .kg-toggle-card {
-    border-radius: 0.5em;
-    box-shadow: none;
-    padding: 0;
-}
-
-.section .kg-toggle-card + .kg-toggle-card {
-    margin: 0;
-}
-
-.section .kg-toggle-heading {
-    border-radius: 0.5em;
-    background: white;
-    padding: 1em;
-    align-items: center;
-    text-align: right;
-}
-
-.kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
-    border-radius: 1em 1em 0 0;
-}
-
-.section .kg-toggle-content {
-    background: white;
-    border-radius: 0 0 0.5em 0.5em;
-    box-shadow: inset 0 0 0 1px rgb(124 139 154 / 25%);
-    padding: 2vmin 0;
-    margin-bottom: 2vmin;
-}
-
 .section h4:before {
     display: block;
     width: 2em;
@@ -957,6 +927,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 .list-icons li h4 {
     margin: 0;
     font-size: 1em;
+    justify-content: center;
 }
 
 .list-icons li h4::before {
@@ -1903,6 +1874,45 @@ make sure they look good, and are given a bit of extra spacing. */
 
 .kg-product-card-container {
     max-width: 650px;
+}
+
+/* Toggle cards
+/* ---------------------------------------------------------- */
+.kg-toggle-card {
+    border-radius: 0.5em;
+    box-shadow: none;
+    padding: 0;
+}
+
+.kg-toggle-card + .kg-toggle-card {
+    margin: 0;
+}
+
+.kg-toggle-heading {
+    border-radius: 0.5em;
+    background: white;
+    padding: 1em;
+    align-items: center;
+    text-align: right;
+}
+
+.kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
+    border-radius: 1em 1em 0 0;
+}
+
+.kg-toggle-content {
+    background: white;
+    border-radius: 0 0 0.5em 0.5em;
+    box-shadow: inset 0 0 0 1px rgb(124 139 154 / 25%);
+    margin-bottom: 2vmin;
+}
+
+.kg-toggle-content p {
+    padding: 2vmin 0 0;
+}
+
+.kg-toggle-content p:last-child {
+    padding-bottom: 4vmin;
 }
 
 /* Price cards */
