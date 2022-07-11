@@ -928,6 +928,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     font-size: 1.4em;
 }
 
+/* Two Wide use h3 heading */
+/* ---------------------------------------------------------- */
+
 .list-icons {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -953,6 +956,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .list-icons li h4 {
     margin: 0;
+    font-size: 1em;
 }
 
 .list-icons li h4::before {
@@ -961,6 +965,49 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .list-icons li i {
     font-size: 3em;
+}
+
+/* Three Wide use h4 heading */ 
+/* ---------------------------------------------------------- */
+
+.list-icons.three-wide {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vmin;
+    align-items: baseline;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.list-icons.three-wide li {
+    grid-template-columns: 1fr;
+}
+
+.list-icons.three-wide li {
+    grid-template-columns: 1fr;
+}
+
+.list-icons.three-wide li p {
+    font-size: 0.5em;
+}
+
+@media (max-width: 500px) {
+    .list-icons {
+        grid-template-columns: 1fr;
+        grid-template-columns: full-start/full-end;
+    }
+    .list-icons.three-wide {
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+    }
+    .list-icons.three-wide h4 {
+        font-size: 0.6em;
+    }
+    .scroll-icon-wrapper {
+        margin-top: 0;
+    }
+    .scroll-icon-wrapper:not(.site-header-content .scroll-icon-wrapper) {
+        display: none;
+    }
 }
 
 /* Scrolling icon */
@@ -1008,9 +1055,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 @media (max-width: 500px) {
-    .list-icons {
-        grid-template-columns: 1fr;
-    }
     .scroll-icon-wrapper {
         margin-top: 0;
     }
@@ -1632,7 +1676,7 @@ headings, text, images and lists. We deal with cards lower down. */
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
-.gh-content > [id] {
+.gh-content > [id]:not(section.section) {
     margin: 0;
     color: var(--color-darkmode);
     margin: 2em 0 1em;
