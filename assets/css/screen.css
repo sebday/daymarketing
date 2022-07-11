@@ -848,7 +848,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     margin: 0 auto;
-    padding: 0 2vmin;
+    padding: 0 2vmin 4vmin;
     grid-gap: 4vmin;       
 }
 
@@ -1913,6 +1913,10 @@ div.kg-toggle-card .kg-toggle-content {
 
 div.kg-toggle-card .kg-toggle-content p {
     margin: 0 0 2vmin;
+}
+
+figure.kg-gallery-card {
+    margin: 4em 0 2em 0;
 }
 
 /* Price cards */
