@@ -707,7 +707,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0 0 1em;
 }
 
-.section h4 {
+.section h4,
+.kg-toggle-card h4 {
     margin: 0 0 2em 2em;
     display: flex;
     justify-content: flex-start;
@@ -719,7 +720,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     margin: 0;
 }
 
-.section h4:before {
+.section h4:before,
+.kg-toggle-card h4:before {
     display: block;
     width: 2em;
     height: 4px;
@@ -1878,17 +1880,18 @@ make sure they look good, and are given a bit of extra spacing. */
 
 /* Toggle cards
 /* ---------------------------------------------------------- */
-.kg-toggle-card {
+div.kg-toggle-card {
     border-radius: 0.5em;
     box-shadow: none;
     padding: 0;
+    box-shadow: none;
 }
 
-.kg-toggle-card + .kg-toggle-card {
+div.kg-toggle-card + div.kg-toggle-card {
     margin: 0;
 }
 
-.kg-toggle-heading {
+div.kg-toggle-card .kg-toggle-heading {
     border-radius: 0.5em;
     background: white;
     padding: 1em;
@@ -1896,23 +1899,20 @@ make sure they look good, and are given a bit of extra spacing. */
     text-align: right;
 }
 
-.kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
+div.kg-toggle-card[data-kg-toggle-state=open] .kg-toggle-heading {
     border-radius: 1em 1em 0 0;
 }
 
-.kg-toggle-content {
+div.kg-toggle-card .kg-toggle-content {
     background: white;
     border-radius: 0 0 0.5em 0.5em;
     box-shadow: inset 0 0 0 1px rgb(124 139 154 / 25%);
     margin-bottom: 2vmin;
+    padding: 1em;
 }
 
-.kg-toggle-content p {
-    padding: 2vmin 0 0;
-}
-
-.kg-toggle-content p:last-child {
-    padding-bottom: 4vmin;
+div.kg-toggle-card .kg-toggle-content p {
+    margin: 0 0 2vmin;
 }
 
 /* Price cards */
