@@ -1761,7 +1761,7 @@ make sure they look good, and are given a bit of extra spacing. */
     width: 100%;
 }
 
-/* This keeps small iamges centered */
+/* This keeps small images centered */
 .kg-image-card img {
     margin: auto;
 }
@@ -1810,6 +1810,10 @@ make sure they look good, and are given a bit of extra spacing. */
 
 .kg-product-card-container {
     max-width: 650px;
+}
+
+.kg-card.kg-header-card.kg-size-large { 
+    margin-bottom: 4vmin;
 }
 
 /* Toggle cards
@@ -2505,21 +2509,15 @@ button.form-submit i {
 
 .tag-template .site-main.outer,
 .page-blogmeta .site-main.outer {
-    padding-top: 0;
+    padding-bottom: 0;
 }
-
-.tag-template .site-main .inner,
-.page-blogmeta .site-main .inner {
-    padding-top: 4vmin;
-}
-
 
 .tag-template blockquote,
 .page-blogmeta blockquote {
     background: var(--ghost-first-color);
     color: white;
     grid-column: full-start/full-end;
-    margin: 0;
+    margin: 4vmin 0 0;
     padding: 4vmin;
 }
 

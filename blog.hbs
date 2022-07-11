@@ -4,19 +4,6 @@ into the {body} of the default.hbs template --}}
 
 <section class="section" id="home">
     <div class="site-header-content">
-        {{#if @site.cover_image}}
-            {{!-- This is a responsive image, it loads different sizes depending on device
-            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
-            <img class="site-header-cover"
-                srcset="{{img_url @site.cover_image size="s"}} 300w,
-                        {{img_url @site.cover_image size="m"}} 600w,
-                        {{img_url @site.cover_image size="l"}} 1000w,
-                        {{img_url @site.cover_image size="xl"}} 2000w"
-                sizes="100vw"
-                src="{{img_url @site.cover_image size="xl"}}"
-                alt=""
-            />
-        {{/if}}
         <div class="outer">
             <h1><span>Digital marketing articles</span></h1>
             <div class="button cta-button">
@@ -41,9 +28,6 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main section light outer">
 
-    <blockquote>I love anything tech and have spent my whole life "hacking" in the real sense of the world - tinkering with things (normally in a shed). When I got my first Amiga aged 9 it started my lifelong passion for computing. I spent hours playing around in Workbench, changing colours, icons and wallpapers. I started with simple Basic scripts, but before long I was writing my own games and demos. My passion for computing had been ignited, and it has continued to this day. Over 30 years later I still enjoy configuring computers and making them work for me!</blockquote>
-
-
     <div class="inner posts">
         <div class="post-feed">
             {{#get "posts" include="tags,authors" filter="tags:-[hash-agency]" limit="all" }}
@@ -54,6 +38,8 @@ into the {body} of the default.hbs template --}}
             
         </div>
     </div> 
+
+    <blockquote>I love anything tech and have spent my whole life "hacking" in the real sense of the world - tinkering with things (normally in a shed). When I got my first Amiga aged 9 it started my lifelong passion for computing. I spent hours playing around in Workbench, changing colours, icons and wallpapers. I started with simple Basic scripts, but before long I was writing my own games and demos. My passion for computing had been ignited, and it has continued to this day. Over 30 years later I still enjoy configuring computers and making them work for me!</blockquote>
 
 </main>
 
