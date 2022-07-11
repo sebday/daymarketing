@@ -756,12 +756,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     background: white;
 }
 
-@media (max-width: 500px) {
-    .section-header h2 {
-        font-size: 1em;
-    }
-}
-
 /* Three content boxes
 /* ---------------------------------------------------------- */
 
@@ -1363,62 +1357,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: inline-block;
 }
 
-/* Tag cloud /*
-/* ---------------------------------------------------------- */
-
-.tagcloud h3 {
-    font-size: 1em;
-    color: var(--color-midgrey);
-    text-align: center;
-}
-
-.tagcloud ul {
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 0 3em;
-    font-size: 0.5em;
-}
-
-.tagcloud li {
-    display: flex;
-    align-items: center;
-    margin: 0.5em;
-    background-color: rgb(230 230 230 / 16%);
-    border-radius: 0.5em;
-}
-
-.tagcloud li a {
-    padding: 0 1em;
-}
-
-.tagcloud li:hover {
-    background-color: var(--ghost-accent-color);
-}
-
-.tagcloud li:hover a {
-    color: white;
-}
-
-.tagcloud li+li {
-    margin: 0.5em;
-}
-
-@media (max-width: 500px) {
-    .tagcloud ul {
-        padding: 0;
-    }
-
-    .tagcloud li {
-        font-size: 0.75em!important;
-    }
-
-    .tagcloud li a {
-        padding: 0.5em 1em;
-    }
-}
-
 /* Special Styling for home page grid (below):
 
 The first post in the list is styled to be bigger than the others and take over
@@ -1643,10 +1581,6 @@ created within the Ghost editor. The main content handles
 headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
-.gh-content > * + * {
-    margin-top: 4vmin;
-    margin-bottom: 0;
-}
 
 /* [id] represents all headings h1-h6, reset all margins */
 .gh-content > [id]:not(section.section) {
@@ -1917,6 +1851,13 @@ div.kg-toggle-card .kg-toggle-content p {
 
 figure.kg-gallery-card {
     margin: 4em 0 2em 0;
+}
+
+/* Bookmark cards */
+/* ---------------------------------------------------------- */
+
+.kg-bookmark-card {
+    margin-bottom: 4vmin;
 }
 
 /* Price cards */
@@ -2562,6 +2503,85 @@ button.form-submit i {
     order: 1;
 }
 
+.tag-template .site-main.outer,
+.page-blogmeta .site-main.outer {
+    padding-top: 0;
+}
+
+.tag-template .site-main .inner,
+.page-blogmeta .site-main .inner {
+    padding-top: 4vmin;
+}
+
+
+.tag-template blockquote,
+.page-blogmeta blockquote {
+    background: var(--ghost-first-color);
+    color: white;
+    grid-column: full-start/full-end;
+    margin: 0;
+    padding: 4vmin;
+}
+
+/* Tag cloud /*
+/* ---------------------------------------------------------- */
+
+.tagcloud {
+    z-index: 999;
+}
+
+.tagcloud h3 {
+    font-size: 1em;
+    color: var(--color-midgrey);
+    text-align: center;
+}
+
+.tagcloud ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0 3em;
+    font-size: 0.5em;
+}
+
+.tagcloud li {
+    display: flex;
+    align-items: center;
+    margin: 0.5em;
+    background-color: rgb(230 230 230 / 16%);
+    border-radius: 0.5em;
+}
+
+.tagcloud li a {
+    padding: 0 1em;
+}
+
+.tagcloud li:hover {
+    background-color: var(--ghost-accent-color);
+}
+
+.tagcloud li:hover a {
+    color: white;
+}
+
+.tagcloud li+li {
+    margin: 0.5em;
+}
+
+@media (max-width: 500px) {
+    .tagcloud ul {
+        padding: 0;
+    }
+
+    .tagcloud li {
+        font-size: 0.75em!important;
+    }
+
+    .tagcloud li a {
+        padding: 0.5em 1em;
+    }
+}
 
 /* 9. Error Template
 /* ---------------------------------------------------------- */

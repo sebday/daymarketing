@@ -41,6 +41,9 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main section light outer">
 
+    <blockquote>I love anything tech and have spent my whole life "hacking" in the real sense of the world - tinkering with things (normally in a shed). When I got my first Amiga aged 9 it started my lifelong passion for computing. I spent hours playing around in Workbench, changing colours, icons and wallpapers. I started with simple Basic scripts, but before long I was writing my own games and demos. My passion for computing had been ignited, and it has continued to this day. Over 30 years later I still enjoy configuring computers and making them work for me!</blockquote>
+
+
     <div class="inner posts">
         <div class="post-feed">
             {{#get "posts" include="tags,authors" filter="tags:-[hash-agency]" limit="all" }}
@@ -54,9 +57,4 @@ into the {body} of the default.hbs template --}}
 
 </main>
 
-<section class="gh-content gh-canvas">
-    <div class="kg-width-wide">
-        <blockquote>I love anything tech and have spent my whole life "hacking" in the real sense of the world - tinkering with things (normally in a shed). When I got my first Amiga aged 9 it started my lifelong passion for computing. I spent hours playing around in Workbench, changing colours, icons and wallpapers. I started with simple Basic scripts, but before long I was writing my own games and demos. My passion for computing had been ignited, and it has continued to this day. Over 30 years later I still enjoy configuring computers and making them work for me!</blockquote>
-        <blockquote>Humanity Is a Kind of 'Biological Boot Loader' for AI - Elon Musk, TechnoKing</blockquote>
-    </div>
-</section>
+
