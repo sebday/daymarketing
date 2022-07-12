@@ -1581,12 +1581,12 @@ created within the Ghost editor. The main content handles
 headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
-
 /* [id] represents all headings h1-h6, reset all margins */
+.gh-content > p,
+.gh-content > blockquote,
 .gh-content > [id]:not(section.section) {
-    margin: 0;
     color: var(--color-darkmode);
-    margin: 2em 0 1em;
+    margin: 2em 0 0;
 }
 
 /* A larger margin before/after HRs and blockquotes */
