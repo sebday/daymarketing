@@ -1529,6 +1529,9 @@ make sure this only happens on large viewports / desktop-ish devices.
     width: 100%;
 }
 
+
+/* -------- */
+
 /* Content grid
 /* ---------------------------------------------------------- */
 
@@ -2207,6 +2210,36 @@ figcaption a {
 
 }
 
+/* Avatar intro block above contact form */
+.contact-intro {
+    grid-column: wide-start/wide-end;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2em;
+    align-items: center;
+    color: white;
+    padding-top: 1em;
+}
+
+.contact-intro figure {
+   border-left: 5px solid var(--color-darkmode);
+}
+
+.contact-intro h2 {
+    color: var(--color-yellow);
+}
+
+.contact-intro p {
+    color: rgb(255 255 255 / 85%);
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .contact-intro {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Calender / calendly */
 .calendly-inline-widget {
     height: 1050px;
@@ -2238,7 +2271,6 @@ figcaption a {
     height: 100%;
   }
 
-  
 /* 7.3. Buttons / CTA
 /* ---------------------------------------------------------- */
 
@@ -2612,6 +2644,7 @@ button.form-submit i {
         padding-bottom: 14vw;
     }
 }
+
 
 /* 11. Site Footer
 /* ---------------------------------------------------------- */
