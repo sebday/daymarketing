@@ -1794,18 +1794,22 @@ make sure they look good, and are given a bit of extra spacing. */
     color: var(--ghost-accent-color);
 }
 
+.kg-card.kg-header-card.kg-size-small {
+    padding: 4vh;
+    min-height: 20vh;
+    margin-top: 0;
+}
+.kg-card.kg-header-card.kg-size-medium {
+    min-height: 40vh;
+}
+
+
 .kg-card.kg-header-card.kg-size-small h2.kg-header-card-header {
     font-size: 3em;
 }
 
 .kg-header-card.kg-size-small h3.kg-header-card-subheader {
     color: var(--color-darkmode);
-}
-
-.kg-card.kg-header-card.kg-size-small {
-    padding: 4vh;
-    min-height: 10vh;
-    margin-top: 0;
 }
 
 .kg-product-card-container {
