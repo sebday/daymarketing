@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
 <head>
+    <link rel="DNS-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
     {{!-- Basic meta - advanced meta is output with {ghost_head} below --}}
     <title>{{meta_title}}</title>
     <meta charset="utf-8" />
