@@ -50,6 +50,7 @@ production stylesheet in assets/built/screen.css
 
     /* Fonts */
     --font-sans-serif: "Lato", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: "Georgia", "Times", serif;
     --font-title: "Raleway", sans-serif;
     --font-mono: Menlo, Courier, monospace;
 
@@ -102,6 +103,10 @@ production stylesheet in assets/built/screen.css
 
 .first {
     margin-top: 0!important;
+}
+
+.last {
+    margin-top: 4vmin!important;
 }
 
 .center {
@@ -1803,7 +1808,6 @@ make sure they look good, and are given a bit of extra spacing. */
     min-height: 40vh;
 }
 
-
 .kg-card.kg-header-card.kg-size-small h2.kg-header-card-header {
     font-size: 3em;
 }
@@ -1949,8 +1953,9 @@ figure.kg-gallery-card {
     grid-column: 1 / -1;
 }
 
-.kg-width-full.kg-card-hascaption figcaption {
-    grid-column: main-start / main-end;
+.kg-width-full.kg-card-hascaption figcaption,
+.kg-width-main {
+    grid-column: main-start / main-end!important;
 }
 
 .article-comments {
@@ -2221,8 +2226,15 @@ figcaption a {
     grid-template-columns: 1fr 2fr;
     grid-gap: 2em;
     align-items: center;
+}
+
+.contact-intro p {
+    margin: 0;
+    padding: 0;
+}
+
+#contact-form .contact-intro {
     color: white;
-    padding-top: 1em;
 }
 
 .contact-intro figure {
@@ -2231,11 +2243,6 @@ figcaption a {
 
 .contact-intro h2 {
     color: var(--color-yellow);
-}
-
-.contact-intro p {
-    color: rgb(255 255 255 / 85%);
-    margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -2253,9 +2260,6 @@ figcaption a {
     .calendly-inline-widget {
         height: 1150px;
     } 
-    .contact-intro p {
-        margin: 0 2em;
-    }
 }
 
 /* Youtube wrapper */

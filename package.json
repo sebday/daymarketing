@@ -2,7 +2,7 @@
     "name": "daymarketing",
     "description": "A full page theme built on Casper",
     "demo": "https://day.marketing",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "engines": {
         "ghost": ">=5.0.0"
     },
